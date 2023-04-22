@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style-starter.css' %}">
+
+</head>
+<body>
+    <center>
+    <h1>Login</h1>
+    
+    <div class="col-lg-8 form-inner-cont">
+        <form action="/login/" method="post" class="signin-form">
+            {% csrf_token %}
+            {{msg}}
+            <!-- Cross Site Request Forgery -->
+            <center>
+                <div >
+                    <div >
+                        <input type="email" name="email" id="w3lName" placeholder="Email Enter karo"
+                            required="" />
+                    </div>
+                    <br>
+                    <div >
+                        <input type="password" name="passwd" id="w3lName" placeholder="Password Enter Karo"
+                            required="" />
+                    </div>
+                </div>
+            </center>
+           <br>
+            <div class="text-center">
+                <button type="submit" class="btn btn-style btn-primary">Login</button>
+            </div>
+            <br>
+            <a href="/register/">Register Now!!</a>
+        </form>
+    </div>
+</center>
+
+</body>
+</html>

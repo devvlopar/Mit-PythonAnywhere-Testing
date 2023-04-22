@@ -1,0 +1,45 @@
+{% extends 'header&footer.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<center>
+
+<div class="col-lg-8 form-inner-cont">
+    <form action="/add_blog/" method="post" enctype="multipart/form-data" class="signin-form">
+        {% csrf_token %}
+        {{msg}}
+        <!-- Cross Site Request Forgery -->
+        <div >
+            <div class="form-input">
+                <input type="text" name="title" id="w3lName" placeholder="Enter Title.."
+                    required="" />
+            </div>
+            
+            <div >
+                <textarea placeholder="Start Wrting here.." name="des" ></textarea>
+            </div>
+            <div class="align-items-left">
+                <select name="cate" id="cars">
+                <option value="fashion">Fashion</option>
+                <option value="beauty">Beauty</option>
+                <option value="food">Food</option>
+                <option value="lifestyle">Lifestyle</option>
+                </select>
+            </div>
+
+            <div >
+                <input type="file" name="foto" id="w3lPhone" placeholder="Re-Enter Password"
+                    required />
+            </div>
+        </div>
+       <br>
+        <div class="text-center">
+            <button type="submit" class="btn btn-style btn-primary">Post Blog</button>
+        </div>
+    </form>
+</div>
+
+</center>
+<br>
+{% endblock %}

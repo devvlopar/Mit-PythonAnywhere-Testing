@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style-starter.css' %}">
+
+</head>
+<body>
+    <center>
+    <h1>Registration Form</h1>
+    
+    <div class="col-lg-8 form-inner-cont">
+        <form action="/register_submit/" method="post" class="signin-form">
+            {% csrf_token %}
+            {{msg}}
+            <!-- Cross Site Request Forgery -->
+            <div class="form-grids">
+                <div class="form-input">
+                    <input type="text" name="fname" id="w3lName" placeholder="First Name"
+                        required="" />
+                </div>
+                <div class="form-input">
+                    <input type="text" name="lname" id="w3lSubject" placeholder="Last Name"
+                        required />
+                </div>
+                <div class="form-input">
+                    <input type="text" name="username" id="w3lSubject" placeholder="Username"
+                        required />
+                </div>
+                <div class="form-input">
+                    <input type="email" name="email" id="w3lSender" placeholder="Email"
+                        required />
+                </div>
+                <div class="form-input">
+                    <input type="password" name="passwd" id="w3lPhone" placeholder="Password"
+                        required />
+                </div>
+                <div class="form-input">
+                    <input type="password" name="repasswd" id="w3lPhone" placeholder="Re-Enter Password"
+                        required />
+                </div>
+            </div>
+           <br>
+            <div class="text-center">
+                <button type="submit" class="btn btn-style btn-primary">Register</button>
+            </div>
+        </form>
+        <a href="/login/" > Already registered??</a>
+    </div>
+</center>
+
+</body>
+</html>
